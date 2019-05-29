@@ -89,15 +89,36 @@
 		</tr>
 	</table>
 	<script>
+		var a1out=false;
+		var b1out=false;
+		var a1 = 1;
+	var b1 = 15;
+	var dice = Number($(".result").html());
+
 	$(".but").click(function(){
 		if($(".turn").html()=="Turn Player A"){
-	$(".result").html(Math.ceil(Math.random()*6));$(".turn").html("Turn Player B");}
+	$(".result").html(Math.ceil(Math.random()*6));$(".turn").html("Turn Player B");dice = Number($(".result").html());if(dice==6){a1out=true;}if(a1out==true){a1=a1+dice;if(a1>28){a1=a1-28};changea(a1)}}
 		else 
 			{
 				$(".result").html(Math.ceil(Math.random()*6));
-			$(".turn").html("Turn Player A");}
+			$(".turn").html("Turn Player A");dice = Number($(".result").html());if(dice==6){b1out=true;}if(b1out==true){b1=b1+dice;if(b1>28){b1=b1-28};changea(b1)}}
 		
-		})
+		});
+		
+	
+	
+	// $(".A1").removeClass().$("#a1").appendClass
+	function changea(pos)
+	{
+		$(".A1").removeClass();
+		$("#"+pos).addClass("A1");
+	}
+	function changeb(pos)
+	{
+		$(".B1").removeClass();
+		$("#"+pos).addClass("B1");
+	}
+	console.log(a1,b1);
 
 
 	</script>
