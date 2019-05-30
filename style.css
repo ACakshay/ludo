@@ -4,25 +4,24 @@
 }
 .base
 {
-height: 95vmin;
-width: 95vmin;
+height: 90vmin;
+width: 90vmin;
 border:2px solid black;
 margin: auto;
 justify-content: center;
 align-self: center;
-margin-top: 2.5vmin;
+margin-top: 4vmin;
 border-collapse: collapse;
 
 }
 .row{
-	margin: 0px;
-	padding: 0px;
+
 }
 .box{
-	width: 12.5%;
-	height: 12.5%;
-
-
+min-width: 12.5vmin;
+min-height: 12.5vmin;
+max-width: 12.5vmin;
+max-height: 12.5vmin;
 	padding: 0px;
 	margin: 0px;
 }
@@ -43,14 +42,17 @@ border-collapse: collapse;
 	border:2px solid black;
 	align-items: center;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 100%;
+	padding: 0px;
+
 }
 .roll button{
 	box-decoration-break: all;
 	text-decoration: none;
 	border-style: none;
-	width: 80%;
+	width: 47%;
 	height:70%;
+	margin: 2px;
 }
 .roll button:focus{
 	border-style: none;
@@ -60,14 +62,36 @@ button:hover{
 	background-color: #2e2e2e;
 	color:white;
 	transition-duration: 0.2s;
-	font-size: 130%;
+	font-size: 100%;
 
 	
 }
 .B1{
-	background-color: rgb(126, 164, 214,0.5);
+	
+background-image: url(yellow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .A1{
-	background-color: rgb(209, 110, 119,0.5);
+	background-image: url(purple.png);
+	    background-size: contain;
+	    background-repeat: no-repeat;
+}
+.result{
+	width:98.8%;
+	height: 100%;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: 0px;
+}
+.A2{
+	display: inline-flex;
+	align-self: left;
+	width: 49%;
+	height: 98%;
+	background-image: url(yellow.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
