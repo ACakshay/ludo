@@ -52,7 +52,7 @@
 			<td class="box" id="25"></td>
 			<td class="box"></td>
 			<td class="box"></td>
-			<td class="box result1" colspan="2"><input type="text" name="a" value="1" class="result"></td>
+			<td class="box result1" colspan="2"><input type="text" name="a" value="" class="result"></td>
 			<td class="box"></td>
 			<td class="box"></td>
 			<td class="box"  id="12"></td>
@@ -108,6 +108,8 @@
 				$(".result").val(Math.ceil(Math.random()*6));
 
 				$(".turn").html("Turn Player B");
+				
+
 				dice = Number($(".result").val());
 				if(dice==6)
 					{
@@ -116,6 +118,7 @@
 				if(a1out==true)
 					{
 						a1=a1+dice;
+						if(a1==b1){homeb()}
 						if(a1>28)
 						{
 							a1=28;
@@ -130,8 +133,10 @@
 				//$(".result").html(Math.ceil(Math.random()*6));
 				
 				$(".result").val(Math.ceil(Math.random()*6));
+				if(dice==6){}
+				else
+					$(".turn").html("Turn Player A");
 
-				$(".turn").html("Turn Player A");
 				dice = Number($(".result").val());
 				if(dice==6)
 				{
@@ -140,6 +145,7 @@
 				if(b1out==true)
 				{
 					b1=b1+dice;
+					if(a1==b1){homea()}
 					if(b1>28)
 					{
 						b1=b1-28;
@@ -166,6 +172,7 @@
 				if(a1out==true)
 					{
 						a1=a1+dice;
+						if(a1==b1){homeb()}
 						if(a1>28)
 						{
 							a1=a1-28;
@@ -187,14 +194,16 @@
 				{
 					b1out=true;
 				}
+
 				if(b1out==true)
 				{
 					b1=b1+dice;
+					if(a1==b1){homea()}
 					if(b1>28)
 					{
 						b1=b1-28;
 					};
-					changeb(b1)
+					changeb(b1);
 				}
 
 			}
@@ -206,19 +215,74 @@
 
 
 	// $(".A1").removeClass().$("#a1").appendClass
+
 	function changea(pos)
-	{
+	{	
+		
 		$(".A1").removeClass();
 		$("#"+pos).addClass("A1");
 	}
 	function changeb(pos)
-	{
+	{	
+		
 		$(".B1").removeClass();
 		$("#"+pos).addClass("B1");
 	}
-	
+	function homea()
+	{	
+		a1=1;
+		$(".A1").removeClass();
+		$("#1").addClass("A1");
+	}
+	function homeb()
+	{	
+		b1=15;
+		$(".B1").removeClass();
+		$("#15").addClass("B1");
+	}
 
+
+	// function diceroll()
+	// {
+	// 	$(".result").val(Math.ceil(Math.random()*6));
+	// 	dice=$(".result").val();
+	// 	move();
+	// }
+	// function move()
+	// {
+	// if(dice!=6)
+	// {
+	// 	if($(".turn").html()=="Turn Player A")
+	// 	{
+	// 		a1=a1+dice;
+	// 		$(".turn").html("Turn Player B")
+	// 		changea(a1);
+	// 	}
+	// 	else
+	// 	{
+	// 		b1=b1+dice;
+	// 		$(".turn").html("Turn Player A")
+	// 		changeb(b1)
+	// 	}
+	// }
+	// else
+	// {
+	// 	if($(".turn").html()=="Turn Player A")
+	// 	{	
+	// 		a1=a1+dice;
+	// 		changea(a1);
+
+	// 	}
+	// 	else
+	// 	{
+	// 		b1=b1+dice;
+	// 		changeb(b1)
+	// 	}
+	// }
+		
+	// }
 
 	</script>
+	}
 </body>
-</html>
+</html>	
